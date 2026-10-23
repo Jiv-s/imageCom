@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Size Reducer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="scripts.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <h1>Image Size Reducer</h1>
+    <p>Compress your images and save storage space.</p>
+
+    <form id="imageForm">
+      <label for="image">Choose an image</label>
+      <input
+        type="file"
+        id="image"
+        accept="image/jpeg,image/png,image/webp"
+        required
+      />
+
+      <label for="quality">
+        Compression Quality: <span id="qualityValue">60</span>%
+      </label>
+      <input
+        type="range"
+        id="quality"
+        min="10"
+        max="90"
+        value="60"
+      />
+
+      <button type="submit" id="compressBtn">
+        Reduce Image Size
+      </button>
+    </form>
+
+    <div id="result" class="result hidden">
+      <h2>Compression Result</h2>
+
+      <div class="sizes">
+        <p>Original Size: <strong id="originalSize"></strong></p>
+        <p>Compressed Size: <strong id="compressedSize"></strong></p>
+        <p>Size Reduced: <strong id="reduction"></strong></p>
+      </div>
+
+      <img id="preview" alt="Compressed image preview" />
+
+      <a id="downloadBtn" class="download" download="compressed-image.jpg">
+        Download Compressed Image
+      </a>
+    </div>
+
+    <p id="message"></p>
+  </main>
+
+
+</body>
+</html>
